@@ -25,6 +25,7 @@ body {
     display: block;
     width: 860px;
     margin: auto;
+    padding: 30px;
 }
 .video-vsl iframe {
     display: flex;
