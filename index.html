@@ -1,10 +1,19 @@
 <!doctype html>
 <html>
 <head>
+
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WS4S2SJ');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta charset="windows-1252"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-<title>Gota Himalaia</title>
+<title>Página de Vendas - GDH</title>
 	
 <link href="style.css" rel="stylesheet" />
 <!-- CSS Bootstrap !-->
@@ -15,194 +24,13 @@
 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <!-- Folha de estilo Animate !-->
 
-<!-- Domínio Facebook -->
-<meta name="facebook-domain-verification" content="kvgv27om5uwqs1kpsgpnmul6gfyd33" />
-<!-- End Domínio Facebook -->
-
-
-<!-- Script de traqueamento !-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
-<script>
-$('a[href^="#"]').on('click', function(e) {
-    e.preventDefault();
-    var id = $(this).attr('href'),
-            targetOffset = $(id).offset().top;
-            
-    $('html, body').animate({ 
-        scrollTop: targetOffset - 100
-    }, 500);
-});
-    function parseQuery(qstr) {
-        var query = {};
-        var a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&');
-        for (var i = 0; i < a.length; i++) {
-            var b = a[i].split('=');
-            query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
-        }
-        return query;
-    }
-
-    function encodeQuery(obj) {
-        var str = [];
-        for (var p in obj)
-            if (obj.hasOwnProperty(p)) {
-                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-            }
-        return str.join("&");
-    }
-
-    function addQueryParameterToDomain(key, value) {
-        var links = document.querySelectorAll('a[href].checkout'),
-            linksLength = links.length,
-            index,
-            queryIndex,
-            queryString,
-            query,
-            url,
-            domain,
-            colonSlashSlash;
-
-        for (index = 0; index < linksLength; ++index) {
-            url = links[index].href,
-                queryIndex = url.indexOf('?'),
-                colonSlashSlash = url.indexOf('://');
-
-            domain = url.substring(colonSlashSlash + 3);
-            domain = domain.substring(0, domain.indexOf('/'));
-
-            if (queryIndex === -1) {
-                url += '?' + key + '=' + value;
-            } else {
-                queryString = url.substring(queryIndex);
-                url = url.substring(0, queryIndex);
-                query = parseQuery(queryString);
-
-                query[key] = value;
-
-                url += '?' + encodeQuery(query);
-            }
-
-            links[index].href = url;
-        }
-    }
-
-    function addQuery(item) {
-        var arr = item.split('=');
-        if(arr[0] != null && arr[1] != undefined) {
-                addQueryParameterToDomain(arr[0], arr[1]);
-        }
-    }
-
-    jQuery(function() {
-        var url = window.location.search.replace("?", "");
-        var itens = url.split('&');
-        itens.forEach(addQuery);
-    });
-</script>
-
-<!-- Script de backredirect !-->
-<script>
-    (function(b) {
-        var a = {
-            version: "0.0.1",
-            history_api: typeof history.pushState !== "undefined",
-            init: function() {
-                b.location.hash = "#no-back";
-                a.configure();
-            },
-            hasChanged: function() {
-                if (b.location.hash == "#no-back") {
-                    b.location.hash = "#";
-                    if (b.location.search == null || b.location.search == undefined || b.location.search ==
-                        '') {
-                        b.location.href = "https://storetratamentosnaturais.myshopify.com/pages/oferta-extra/?src=back_home";
-                    } else {
-                        if (location.search.indexOf("src") > -1) {
-                            var partes = location.search.slice(1).split('&');
-                            var data = {};
-                            var new_search = '?';
-                            partes.forEach(function(parte) {
-                                var chaveValor = parte.split('=');
-                                var chave = chaveValor[0];
-                                var valor = chaveValor[1];
-                                data[chave] = valor;
-                            });
-                            data.src = data.src + "-->back_home";
-                            new_search += JSON.stringify(data).replace(/[{}"]/g, "").replace(/[:]/g, "=")
-                                .replace(/[,]/g, "&");
-    
-                            b.location.href = "https://storetratamentosnaturais.myshopify.com/pages/oferta-extra/" + new_search;
-                        } else {
-                            b.location.href = "https://storetratamentosnaturais.myshopify.com/pages/oferta-extra/" + b.location.search + "&src=back_home";
-                        }
-                    }
-                }
-            },
-            checkCompat: function() {
-                if (b.addEventListener) {
-                    b.addEventListener("hashchange", a.hasChanged, false);
-                } else {
-                    if (b.attachEvent) {
-                        b.attachEvent("onhashchange", a.hasChanged);
-                    } else {
-                        b.onhashchange = a.hasChanged;
-                    }
-                }
-            },
-            configure: function() {
-                if (b.location.hash == "#no-back") {
-                    if (this.history_api) {
-                        history.pushState(null, "", "#");
-                    } else {
-                        // b.location.hash = "#";
-                        if (b.location.search == null || b.location.search == undefined || b.location.search ==
-                            '') {
-                            b.location.href = "https://storetratamentosnaturais.myshopify.com/pages/oferta-extra/?src=back_home";
-                        } else {
-                            if (location.search.indexOf("src") > -1) {
-                                var partes = location.search.slice(1).split('&');
-                                var data = {};
-                                var new_search = '?';
-                                partes.forEach(function(parte) {
-                                    var chaveValor = parte.split('=');
-                                    var chave = chaveValor[0];
-                                    var valor = chaveValor[1];
-                                    data[chave] = valor;
-                                });
-                                data.src = data.src + "-->back_home";
-                                new_search += JSON.stringify(data).replace(/[{}"]/g, "").replace(/[:]/g, "=")
-                                    .replace(/[,]/g, "&");
-    
-                                b.location.href = "https://storetratamentosnaturais.myshopify.com/pages/oferta-extra/" + new_search;
-                            } else {
-                                b.location.href = "https://storetratamentosnaturais.myshopify.com/pages/oferta-extra/" + b.location.search + "&src=back_home";
-                            }
-                        }
-                    }
-                }
-                a.checkCompat();
-                a.hasChanged();
-            }
-        };
-        if (typeof define === "function" && define.amd) {
-            define(function() {
-                return a;
-            });
-        } else {
-            if (typeof module === "object" && module.exports) {
-                module.exports = a;
-            } else {
-                b.noback = a;
-            }
-        }
-        a.init();
-    }(window));
-</script>
-<!-- Back direct !-->
-
-
+</head>
 <body>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS4S2SJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 	
 <!-- Cabeçalho !-->
 <header>
@@ -210,7 +38,7 @@ $('a[href^="#"]').on('click', function(e) {
 	<div class="headline">
 		<div class="container">
 			<div class="row">
-				<h1>ESSE VÍDEO VAI ESTAR DISPONÍVEL SOMENTE HOJE ...</h1>
+				<h1>ESSE VÍDEO VAI ESTAR DISPONÍVEL SOMENTE HOJE...</h1>
 			</div>
 		</div>
 	</div>
@@ -225,9 +53,9 @@ $('a[href^="#"]').on('click', function(e) {
 	<div class="video-vsl">
 		<div class="container">
 			<div class="row">
-				<p>Atenção, certifique-se que seu som esteja ligado e aperte o play!</p>
 				<!-- Scrip do vídeo aqui !-->
 				<script type="text/javascript" id="scr_6268ab945045c3000aeb48b8">var s=document.createElement("script");s.src="https://scripts.converteai.net/7ccc1362-2860-4371-917c-92ecfbec948a/players/6268ab945045c3000aeb48b8/player.js",s.async=!0,document.head.appendChild(s);</script>
+				<p>ATENÇÃO: PERMANEÇA NA PÁGINA OU SEU PROGRESSO SERÁ REINICIADO.</p>
 			</div>
 		</div>
 	</div>
@@ -237,7 +65,7 @@ $('a[href^="#"]').on('click', function(e) {
 	
 	<!-- Script Delay !-->
 	<script type="text/javascript">    
-	var tmin = 10; //troque o numeral pelos minutos de pitch e ; no final
+	var tmin = 25; //troque o numeral pelos minutos de pitch e ; no final
 	var tseg = 0; //troque o numeral pelos segundos do pitch e ; no final
 
 	// ~ ATENÇÃO!!! NÃO MEXA EM NADA DAQUI PARA BAIXO! ~ //
@@ -273,7 +101,7 @@ $('a[href^="#"]').on('click', function(e) {
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-lg-12 col-sm-12">
-				<h2>OFERTA ESPECIAL<br>PARA VOCÊ</h2>
+				<h2>OFERTA ESPECIAL PARA VOCÊ</h2>
 				<h3>APROVEITE ESSA OFERTA POR TEMPO LIMITADO</h3>
 			</div>
 			
@@ -338,7 +166,7 @@ $('a[href^="#"]').on('click', function(e) {
 								<td class="fb-comments-comment-text">Cara, muito obrigado, achava que isso n ia funcionar pq já tinha feito de td pra melhorar minha ereção, mas msmo assim quis tentar e olha agora parece que tenho 20 anos de novo kkkk</td>
 							</tr>
 							<tr>
-								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>556</likes> <date>12 min</date></td>
+								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>169</likes> <date>12 min</date></td>
 							</tr>
 						</tbody>
 					</table>
@@ -348,14 +176,14 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/2.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/3.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Enrico Martins</name> </font></td>
 							</tr>
 							<tr>
 								<td class="fb-comments-comment-text">Já tinha tentado até usar uns produtos de testosterona, mas não funcionou. Usando isso pela segunda vez, e não tenho mais problemas em deixar duro. E o melhor é que nem estou gastando com pílulas kkkkkk muito bom!!! Obrigado 😀</td>
 							</tr>
 							<tr>
-								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>456</likes> <date>12 min</date></td>
+								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>116</likes> <date>12 min</date></td>
 							</tr>
 						</tbody>
 					</table>
@@ -365,14 +193,14 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/3.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/5.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Juliano Alves</name> </font></td>
 							</tr>
 							<tr>
 								<td class="fb-comments-comment-text">Roberto,eu já tinha feito tudo que podia e não conseguia vencer meu medo de falhar na hora H, agora consigo deixar duro sempre que quiser! Muito feliz! Vou seguir os passos e nunca mais vou me preocupar com isso 😀</td>
 							</tr>
 							<tr>
-								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>176</likes> <date>24 min</date></td>
+								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>156</likes> <date>24 min</date></td>
 							</tr>
 						</tbody>
 					</table>
@@ -382,7 +210,7 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/4.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/7.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Carlos Alves</name> </font></td>
 							</tr>
 							<tr>
@@ -399,7 +227,7 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/5.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/8.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Daniel Barbosa</name> </font></td>
 							</tr>
 							<tr>
@@ -416,14 +244,14 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/6.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/9.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Cesar Rodrigues</name> </font></td>
 							</tr>
 							<tr>
 								<td class="fb-comments-comment-text">Carlos eu n tinha disfunção erétil, mas estava broxando direto, e isso me fazia ficar inseguro. depois que comecei a usar isso nunca mais tive problemas de ereção faz 2 anos.</td>
 							</tr>
 							<tr>
-								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>256</likes> <date>15 min</date></td>
+								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>56</likes> <date>15 min</date></td>
 							</tr>
 						</tbody>
 					</table>
@@ -433,14 +261,14 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/4.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/7.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Carlos Alves</name> </font></td>
 							</tr>
 							<tr>
 								<td class="fb-comments-comment-text">Valeu galera! Vou comprar!!!</td>
 							</tr>
 							<tr>
-								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>126</likes> <date>15 min</date></td>
+								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>26</likes> <date>15 min</date></td>
 							</tr>
 						</tbody>
 					</table>
@@ -453,14 +281,14 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment" id="4">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/7.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/10.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Michel Soares</name> </font></td>
 							</tr>
 							<tr>
 								<td class="fb-comments-comment-text">Gente eu achava que era mentira, mas tudo dando certo…. eu me sentia muito pra baixo, sempre com medo de levar uma mulher pra cama. Cheguei ao ponto de ir num médico da minha cidade... Por anos eu sofri com problemas de ereção, não conseguia chamar mulheres pra sair por causa disso... Com isso, consegui o impossível! Eu não to acreditando.</td>
 							</tr>
 							<tr>
-								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>168</likes> <date>1 h</date></td>
+								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>68</likes> <date>1 h</date></td>
 							</tr>
 						</tbody>
 					</table>
@@ -470,7 +298,7 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/13.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/12.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Augusto</name> </font></td>
 							</tr>
 							<tr>
@@ -487,14 +315,14 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/14.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/15.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Giovanne</name> </font></td>
 							</tr>
 							<tr>
 								<td class="fb-comments-comment-text">Eu pensava a mesma coisa, mas compraria 10 vezes depois que vi que funciona 🙂 Bora ser feliz mano! A gente merece depois que luta tanto🙂</td>
 							</tr>
 							<tr>
-								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>96</likes> <date>15 min</date></td>
+								<td class="fb-comments-comment-actions"><like>Curtir</like> &middot; <reply>Responder</reply> &middot; <likes>36</likes> <date>15 min</date></td>
 							</tr>
 						</tbody>
 					</table>
@@ -504,7 +332,7 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/15.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/16.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Bruno Gandra</name> </font></td>
 							</tr>
 							<tr>
@@ -521,7 +349,7 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/16.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/17.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Lucas Borges</name> </font></td>
 							</tr>
 							<tr>
@@ -538,7 +366,7 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/17.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/21.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Theodoro Sampaio</name> </font></td>
 							</tr>
 							<tr>
@@ -555,7 +383,7 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/16.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/17.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>Lucas Borges</name> </font></td>
 							</tr>
 							<tr>
@@ -572,7 +400,7 @@ $('a[href^="#"]').on('click', function(e) {
 					<table class="fb-comments-comment">
 						<tbody>
 							<tr>
-								<td class="fb-comments-comment-img" rowspan="3"><img src="img/18.jpg" width="100%" height="100%" class="img-fluid"></td>
+								<td class="fb-comments-comment-img" rowspan="3"><img src="img/22.jpg" width="100%" height="100%" class="img-fluid"></td>
 								<td><font class="fb-comments-comment-name"><name>José Maria</name> </font></td>
 							</tr>
 							<tr>
@@ -628,10 +456,11 @@ $('a[href^="#"]').on('click', function(e) {
 </script>	
 <!-- Rodapé !-->
 <footer class="delay ocultar">
-	<div class="container" >
+	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-lg-6 col-sm-6 pirataria">
 				<h2>BIOLAX PRODUTOS NATURAIS EIRELI</h2>
+				<h2>CNPJ 39.584.945/0001-33</h2>
 			</div>
 			<div class="col-md-6 col-lg-6 col-sm-6 copyright ">
 				<p>Copyright ® 2022</p>
@@ -639,7 +468,8 @@ $('a[href^="#"]').on('click', function(e) {
 				<p><a href="termos-de-uso.html" target="_blank">Termos e condições</a> <span>|</span> <a href="politica-de-privacidade.html" target="_blank">Políticas de Privacidade</a></p>
 			</div>
 			<div class="col-md-12 col-lg-12 col-sm-12 text-all">
-				<p><b>Todos os direitos reservados. Todo o conteúdo do site, todas as fotos, imagens, logotipos, marcas, layout, aqui veiculados são de propriedade exclusiva da Gota do Himalaia. É vedada qualquer reprodução, total ou parcial, de qualquer elemento de identidade, sem autorização expressa. A possibilidade criminal de qualquer direito mencionado irá implicar na responsabilização cível e nos termos da Lei. Informamos que Gota do Himalaiaé um tratamento. Seu resultado pode variar de pessoa para pessoa. Os preços dos produtos estão sujeitos a uma alteração sem aviso prévio. "Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site."</p>
+				<p><b>
+2022 ©Copyright © 2022 Gota do Himalaia. Todos os direitos reservados.</p>
 				<p>Este produto não substitui o parecer profissional. Sempre consulte um profissional da saúde para tratar de assuntos relativos à saúde.</p>
 			</div>
 		</div>
